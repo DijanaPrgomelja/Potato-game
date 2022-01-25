@@ -1,9 +1,9 @@
-class Obstacle {
-  constructor(image) {
-    this.image;
-  }
+// class Obstacle {
+//   constructor(image) {
+//     this.image;
+//   }
 
-  collision() {}
+//   collision() {}
 
-  draw() {}
-}
+//   draw() {}
+// }

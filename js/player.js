@@ -6,11 +6,12 @@ class Player {
     this.y = height - this.height;
   }
 
-  move() {}
-  draw() {
-    if (this.y >= this.height - this.height) {
-      this.Y = this.height - this.height;
+  move() {
+    if (x >= 400) {
+      x = 0;
     }
-    console.log(game.playerImage, this.x, this.y, this.width, this.height);
+  }
+  draw() {
+    image(game.playerImage, this.x, this.y, this.width, this.height);
   }
 }

@@ -1,11 +1,11 @@
 const game = new Game();
 
 function preload() {
-  game.prelode();
+  game.preload();
 }
 
 function setup() {
-  createCanvas(1000, 1000);
+  createCanvas(1200, 700);
   game.setup();
 }
 
@@ -13,14 +13,15 @@ function draw() {
   game.draw();
 }
 
-function keyPressed() {
-  if (keyCode === 38) {
-    game.playerImage.moveUp();
-  } else if (keyCode === 40) {
-    game.playerImage.moveDown();
-  } else if (keyCode === 37) {
-    game.playerImage.moveLeft();
-  } else if (keyCode === 39) {
-    game.playerImage.moveRight();
-  }
-}
+ function keyPressed() {
+    if (keyCode === UP_ARROW) {
+      y = y - 10;
+    } else if (keyCode === DOWN_ARROW) {
+      y = y + 10;
+     }
+     if (keyCode === LEFT_ARROW) {
+      x = x - 5;
+    } else if (keyCode === RIGHT_ARROW) {
+     x = x + 5;
+    }
+ }

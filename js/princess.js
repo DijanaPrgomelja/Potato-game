@@ -7,9 +7,6 @@ class Princess {
   }
 
   draw() {
-    if (this.y >= this.height - this.height) {
-      this.Y = this.height - this.height;
-    }
-    console.log(game.princessImage, this.x, this.y, this.width, this.height);
-  }
+    image(game.princessImage, this.x, this.y, this.width, this.height);
+}
 }

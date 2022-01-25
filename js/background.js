@@ -1,9 +1,22 @@
-class Background {
-  draw() {
-    console.log("this is a background");
 
-    game.backgroundImage;
-    image(img.src, img.x, 0, width, height);
-    image(img.src, img.x + width, 0, height);
+let x1 = 0
+let x2 = 1200
+speed = 2
+class Background {
+  
+
+  draw() {
+
+    image(game.backgroundImage, x1, 0, width, height);
+    image(game.backgroundImage, x2, 0, width, height);
+    x1 -= speed
+    x2 -= speed
+    if (x1 < - width) {
+        x1 = width
+    }
+   if (x2 < -width) {
+       x2 = width
+   }
   }
 }
+
