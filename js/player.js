@@ -14,7 +14,7 @@ class Player {
       this.x -= this.speed;
     } else if (direction === "up" && this.y > 0) {
       this.y -= this.speed;
-    } else if (direction === "down" && this.y < 750) {
+    } else if (direction === "down" && this.y < 700) {
       this.y += this.speed;
     }
   }

@@ -15,8 +15,8 @@ class Game {
     this.playerImage = loadImage("assets/player/player02.png");
     this.princessImage = loadImage("assets/princess/princess02.png");
     this.birdImage = loadImage("assets/obstacle/bird02.png");
-    //this.cowImage = loadImage("assets/obstacle/cow02.png");
-    //this.windmillImage = loadImage("assets/obstacle/windmill.gif");
+    this.cowImage = loadImage("assets/obstacle/cow02.png");
+    this.windmillImage = loadImage("assets/obstacle/windmill.gif");
   }
 
   draw() {
@@ -28,23 +28,39 @@ class Game {
     if (frameCount % 200 === 0) {
       this.obstacles.push(new Bird(this.birdImage));
     }
-    // if (frameCount % 600 === 0) {
-    //   this.obstacles.push(new Cow(this.cowImage));
-    // }
-    // if (frameCount % 1000 === 0) {
-    //   this.obstacles.push(new Windmill(this.windmillImage));
-    // }
+    if (frameCount % 600 === 0) {
+      this.obstacles.push(new Cow(this.cowImage));
+    }
+    if (frameCount % 1000 === 0) {
+      this.obstacles.push(new Windmill(this.windmillImage));
+    }
 
     this.obstacles.forEach(function (obstacle) {
       obstacle.draw();
     });
+
+    this.obstacles = this.obstacles.filter((bird) => {
+      if (bird.collision(this.player) || bird.x < 0) {
+        return false;
+      } else {
+        return true;
+      }
+    });
+
+    this.obstacles = this.obstacles.filter((cow) => {
+      if (cow.collision(this.player) || cow.x < 0) {
+        return false;
+      } else {
+        return true;
+      }
+    });
+
+    this.obstacles = this.obstacles.filter((windmill) => {
+      if (windmill.collision(this.player) || windmill.x < 0) {
+        return false;
+      } else {
+        return true;
+      }
+    });
   }
 }
-this.obstacles = this.obstacles.filter((bird) => {
-  console.log(this);
-  if (bird.collision(this.player) || bird.x < 0) {
-    return false;
-  } else {
-    return true;
-  }
-});
