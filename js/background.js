@@ -1,6 +1,6 @@
 
 let x1 = 0
-let x2 = 1200
+let x2 = 1400
 speed = 2
 class Background {
   
