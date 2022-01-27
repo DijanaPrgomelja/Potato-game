@@ -17,10 +17,10 @@ class Princess {
     let playerX = playerInfo.x + playerInfo.width / 2;
     let playerY = playerInfo.y + playerInfo.height / 2;
 
-    if (dist(princessX, princessY, playerX, playerY) > 20) {
+    if (dist(princessX, princessY, playerX, playerY) > 50) {
       return false;
     } else {
-      console.log(winningScreen);
+      game.stage = 2;
       return true;
     }
   }

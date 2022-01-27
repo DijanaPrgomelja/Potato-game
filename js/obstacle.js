@@ -4,7 +4,7 @@ class Bird {
     this.x = width;
     this.y = (Math.random() * height) / 2.5;
     this.width = 70;
-    this.height = 50;
+    this.height = 70;
   }
 
   draw() {
@@ -16,8 +16,8 @@ class Bird {
     }
   }
   collision(playerInfo) {
-    let birdX = this.x + this.width / 2;
-    let birdY = this.y + this.height / 2;
+    let birdX = this.x + (this.width/2);
+    let birdY = this.y + (this.height/2);
 
     let playerX = playerInfo.x + playerInfo.width / 2;
     let playerY = playerInfo.y + playerInfo.height / 2;
