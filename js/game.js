@@ -18,7 +18,7 @@ class Game {
     this.birdImage = loadImage("assets/obstacle/bird02.png");
     this.cowImage = loadImage("assets/obstacle/cow02.png");
     this.windmillImage = loadImage("assets/obstacle/windmill.gif");
-    this.winningScreen= loadImage("assets/winningScreen.gif");
+    this.winningScreen = loadImage("assets/winningScreen.gif");
   }
 
   draw() {
@@ -65,12 +65,11 @@ class Game {
       }
     });
 
-    this.princess = this.princess.filter((princess) => {
-        if (princess.collision(this.player) || princess.x < 0) {
-          return false;
-        } else {
-          return this.winningScreen;
-        }
-      });
+    if (this. princess.collision(this.player) || princess.x < 0) {
+      return false;
+    } else {
+      //this.winningScreen;
+      return true; 
+    }
   }
 }
