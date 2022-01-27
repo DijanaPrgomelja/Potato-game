@@ -5,9 +5,8 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1400 , 700);
+  createCanvas(1400, 700);
   game.setup();
-  
 }
 
 function draw() {
@@ -28,5 +27,10 @@ function keyPressed() {
   } else if (keyCode === RIGHT_ARROW) {
     console.log("right");
     game.player.move("right");
+  }
+  if (keyCode === 32) {
+    game.stage = 1;
+    getAudioContext().resume();
+    game.backgroundSound.play();
   }
 }
