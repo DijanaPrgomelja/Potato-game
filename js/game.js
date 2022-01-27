@@ -2,6 +2,7 @@ class Game {
   constructor() {
     this.backgroundImage;
     this.obstacles = [];
+    this.winningScreen;
   }
 
   setup() {
@@ -17,6 +18,7 @@ class Game {
     this.birdImage = loadImage("assets/obstacle/bird02.png");
     this.cowImage = loadImage("assets/obstacle/cow02.png");
     this.windmillImage = loadImage("assets/obstacle/windmill.gif");
+    this.winningScreen= loadImage("assets/winningScreen.gif");
   }
 
   draw() {
@@ -62,5 +64,13 @@ class Game {
         return true;
       }
     });
+
+    this.princess = this.princess.filter((princess) => {
+        if (princess.collision(this.player) || princess.x < 0) {
+          return false;
+        } else {
+          return this.winningScreen;
+        }
+      });
   }
 }
